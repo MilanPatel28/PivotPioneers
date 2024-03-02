@@ -15,114 +15,280 @@
 		<script
 			src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+		<script>
+				// Define correct answers
+				const answers = ["b", "b", "a", "c", "b", "b", "b"];
+
+				// Function to check answers
+				function checkAnswers(event) {
+				event.preventDefault(); // Prevent form submission
+				let score = 0;
+
+				// Get user's answers
+				const userAnswers = [
+					document.querySelector('input[name="question1"]:checked'),
+					// Add more answers here
+				];
+
+				// Check if all questions are answered
+				for (let i = 0; i < userAnswers.length; i++) {
+					if (!userAnswers[i]) {
+					alert("Please answer all questions!");
+					return;
+					}
+				}
+
+				// Check answers
+				for (let i = 0; i < userAnswers.length; i++) {
+					if (userAnswers[i].value === answers[i]) {
+					score++;
+					}
+				}
+
+				// Display score
+				const result = document.createElement("p");
+				result.textContent = "Your score: " + score + "/" + answers.length;
+				document.getElementById("quiz").appendChild(result);
+				}
+
+				// Add event listener to form submission
+				document.getElementById("quizForm").addEventListener("submit", checkAnswers);
+		</script>
+
 	</head>
 	<body>
 
 		<!-- NAVIGATION -->
 		<header>
-			<div class="nav" id="nav">
-				<div id="learned-logo">
-					<a href="../index.html"><img src="../../images/icon/logo.png"
-							style="width: 120px;"></a></div>
-				<div class="switch-tab" id="switch-tab" onclick="switchTAB()"><img
-						src="../../images/icon/menu.png"></div>
-				<ul id="list-switch">
-					<li><a href="#"><img src="../../images/courses/d1.png"
-									class="icon">Learning Paths</a></li>
-					<li><a href="gate.html"><img src="../../images/courses/paper.png"
-								class="icon">About us</a></li>
-					<li><a href="computer_courses.html"><img
-								src="../../images/courses/computer.png" class="icon">Contact us</a></li>
-				</ul>
-				<div class="search" id="search-switch">
-					<input type="text" placeholder="Search" class="srch"><button
-						id="srchbtn"><img src="../images/icon/search.png"></button>
+			<div class="nav text-center" id="nav">
+				<div>
+					FinLearn
 				</div>
+				<div class="switch-tab" id="switch-tab" onclick="switchTAB()"><img src="../../images/icon/menu.png"></div>
+				<ul id="list-switch">
+				<li><a href="#"><img src="../../images/courses/d1.png" class="icon">Learning Paths</a></li>
+				<li><a href="gate.html"><img src="../../images/courses/paper.png" class="icon">About us</a></li>
+				<li><a href="computer_courses.html"><img src="../../images/courses/computer.png" class="icon">Contact us</a></li>
+				</ul>
+				<!-- <div class="search" id="search-switch">
+					<input type="text" placeholder="Search" class="srch"><button
+						id="srchbtn"><img src="../../images/icon/profile.png"></button>
+				</div> -->
 			</div>
 		</header>
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,500,600,700" rel="stylesheet"> 
-<section class="experience pt-100 pb-100" id="experience">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-8 mx-auto text-center">
-					<div class="section-title">
-						<h4>Personal Finance Learning Path</h4>
-						<p>Let's flow onto the learning journey of PERSONAL FINANCE</p>
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,500,600,700"
+			rel="stylesheet">
+		<section class="experience pt-100 pb-100" id="experience">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-8 mx-auto text-center">
+						<div class="section-title">
+							<h4>Introduction To Personal Finance</h4>
+							<!-- <p>Let's flow onto the learning journey of PERSONAL FINANCE</p> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="box-shadow">
+					<p>
+						<p>Welcome to the world of personal finance! In this chapter, we'll lay
+							the groundwork for your financial journey by exploring what personal
+							finance is and why it matters.</p>
+
+						<h4 class="text-center">Understanding Personal Finance</h4>
+
+						<p>Personal finance is the management of your money and financial
+							decisions to achieve your life goals. It's all about how you earn, spend,
+							save, invest, and protect your assets.</p>
+
+						<h4 class="text-center">Why Personal Finance Matters</h4>
+
+						<p>Personal finance is essential because it empowers you to take control
+							of your financial future. By understanding how to manage your money
+							wisely, you can achieve financial stability, pursue your dreams, and
+							weather unexpected challenges.</p>
+
+						<h4 class="text-center">Key Concepts in Personal Finance</h4>
+
+						<p>Now that you understand the importance of personal finance, let's dive
+							into some key concepts that form the foundation of financial
+							literacy.</p>
+
+						<h4 class="text-center">Budgeting</h4>
+
+						<p>Budgeting is the process of creating a plan for how you'll spend your
+							money. It involves tracking your income and expenses to ensure that
+							you're living within your means and allocating funds towards your
+							priorities, such as bills, savings, and discretionary spending.</p>
+
+						<h4 class="text-center">Saving</h4>
+
+						<p>Saving involves setting aside a portion of your income for future use.
+							Whether it's for emergencies, large purchases, or long-term goals like
+							retirement, saving is crucial for building financial security and
+							achieving your aspirations.</p>
+
+						<h4 class="text-center">Investing</h4>
+
+						<p>Investing is the act of putting your money to work to generate
+							potential returns over time. It's a way to grow your wealth and beat
+							inflation by investing in assets like stocks, bonds, real estate, and
+							mutual funds.</p>
+
+						<h4 class="text-center">Debt Management</h4>
+
+						<p>Debt management involves effectively handling any money that you owe.
+							Whether it's student loans, credit card debt, or a mortgage,
+							understanding how to manage debt responsibly is key to maintaining your
+							financial health and avoiding unnecessary financial stress.</p>
+
+						<h4 class="text-center">Getting Started with Personal Finance</h4>
+
+						<p>Now that you're familiar with the basics of personal finance, it's time
+							to take action and start building a solid financial foundation.</p>
+
+						<h4 class="text-center">Assess Your Financial Situation</h4>
+
+						<p>Begin by taking stock of your current financial situation. Calculate
+							your income, expenses, assets, and liabilities to get a clear picture of
+							where you stand financially.</p>
+
+						<h4 class="text-center">Set Financial Goals</h4>
+
+						<p>Next, identify your financial goals. Whether it's buying a home, saving
+							for your child's education, or retiring comfortably, having specific
+							goals will guide your financial decisions and keep you motivated.</p>
+
+						<h4 class="text-center">Create a Budget</h4>
+
+						<p>Based on your financial situation and goals, create a budget that
+							outlines how you'll allocate your income. Remember to prioritize
+							essentials like bills and savings while allowing for some discretionary
+							spending.</p>
+
+						<h4 class="text-center">Start Saving and Investing</h4>
+
+						<p>Once you have a budget in place, start saving and investing towards
+							your goals. Consider setting up automatic transfers to your savings and
+							retirement accounts to make saving easier and more consistent.</p>
+
+						<h4 class="text-center">Educate Yourself</h4>
+
+						<p>Finally, continue to educate yourself about personal finance. There are
+							plenty of resources available, from books and websites to courses and
+							seminars, that can help you expand your financial knowledge and make
+							informed decisions.</p>
+
+						<h4 class="text-center">Conclusion</h4>
+
+						<p>Congratulations! You've taken the first step towards mastering personal
+							finance. By understanding the basics, setting goals, and taking action,
+							you're well on your way to achieving financial success and building the
+							future you desire. Stay tuned for more chapters where we'll delve deeper
+							into specific topics and strategies to further enhance your financial
+							literacy.</p>
+
+					</p>
+					<p>
+						There is a Python curriculum that will get you a considerable knowledge
+						in Python <br />
+						And an upcoming Data Science curriculum.
+					</p>
+				</div>
+				<br><br>
+				<div class="b2">
+					<h1 class="text-center">Test your Learnings</h1>
+					<br><br>
+					<div id="quiz">
+						<form id="quizForm">
+							<ol>
+								<!-- <li> -->
+									<h3>1. What is personal finance?</h3>
+									<input type="radio" name="question1" value="a" class=""> a) Managing your
+									personal belongings<br>
+									<input type="radio" name="question1" value="b"> b) Managing your money
+									and financial decisions<br>
+									<input type="radio" name="question1" value="c"> c) Managing your social
+									relationships<br>
+									<input type="radio" name="question1" value="d"> d) Managing your time
+									effectively<br><br><br> 	
+								<!-- </li> -->
+								<!-- <li> -->
+									<h3>2. Why is personal finance important?</h3>
+									<input type="radio" name="question2" value="a"> a) It helps you make
+									more friends<br>
+									<input type="radio" name="question2" value="b"> b) It empowers you to
+									take control of your financial future<br>
+									<input type="radio" name="question2" value="c"> c) It allows you to
+									travel the world<br>
+									<input type="radio" name="question2" value="d"> d) It helps you become
+									a better cook<br><br><br>
+								<!-- </li>
+								<li> -->
+									<h3>3. What is budgeting?</h3>
+									<input type="radio" name="question3" value="a"> a) Creating a plan for
+									how you'll spend your money<br>
+									<input type="radio" name="question3" value="b"> b) Tracking your
+									fitness goals<br>
+									<input type="radio" name="question3" value="c"> c) Planning your
+									vacation<br>
+									<input type="radio" name="question3" value="d"> d) None of the
+									above<br><br><br>
+								<!-- </li>
+								<li> -->
+									<h3>4. Why is saving important in personal finance?</h3>
+									<input type="radio" name="question4" value="a"> a) To spend money
+									recklessly<br>
+									<input type="radio" name="question4" value="b"> b) To buy luxury
+									items<br>
+									<input type="radio" name="question4" value="c"> c) To build financial
+									security and achieve goals<br>
+									<input type="radio" name="question4" value="d"> d) To accumulate
+									debt<br><br><br>
+								<!-- </li>
+								<li> -->
+									<h3>5. What does investing involve?</h3>
+									<input type="radio" name="question5" value="a"> a) Spending money on
+									unnecessary items<br>
+									<input type="radio" name="question5" value="b"> b) Putting your money
+									to work to generate potential returns over time<br>
+									<input type="radio" name="question5" value="c"> c) Giving away money to
+									charity<br>
+									<input type="radio" name="question5" value="d"> d) None of the
+									above<br><br><br>
+								<!-- </li>
+								<li> -->
+									<h3>6. How can you start saving and investing towards your financial
+										goals?</h3>
+									<input type="radio" name="question6" value="a"> a) By
+									procrastinating<br>
+									<input type="radio" name="question6" value="b"> b) By setting up
+									automatic transfers to your savings and retirement accounts<br>
+									<input type="radio" name="question6" value="c"> c) By avoiding
+									financial planning<br>
+									<input type="radio" name="question6" value="d"> d) By ignoring your
+									financial situation<br><br><br>
+								<!-- </li>
+								<li> -->
+									<h3>7. Why is it important to educate yourself about personal
+										finance?</h3>
+									<input type="radio" name="question7" value="a"> a) To impress your
+									friends<br>
+									<input type="radio" name="question7" value="b"> b) To make informed
+									decisions and expand your financial knowledge<br>
+									<input type="radio" name="question7" value="c"> c) To waste time<br>
+									<input type="radio" name="question7" value="d"> d) To avoid
+									responsibility<br>
+								<!-- </li> -->
+							</ol>
+							<input type="submit" value="Submit Quiz" class="btn btn-success">
+						</form>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-               <div class="col-xl-12">
-                  <ul class="timeline-list">
-                     <!-- Single Experience -->
-                     <li>
-                        <div class="timeline_content">
-                           <span>1</span>
-                           <h4>Introduction to Personal Finance</h4>
-                           <p>Personal finance is the management of your financial resources to achieve your life goals and dreams. It encompasses budgeting, saving, investing, and managing debt effectively. Understanding personal finance is crucial for individuals to make informed decisions about their money and secure their financial future.</p>
-						   <button class="container btn  btn-primary">Let's Learn</button>
-						</div>
-                     </li>
-                     <!-- Single Experience -->
-                     <li>
-                        <div class="timeline_content">
-                        <span>2</span>
-                           <h4>Basic Financial Concepts</h4>
-                           <p>Basic financial concepts lay the foundation for managing your money effectively. Income refers to the money you earn, while expenses are the costs associated with your daily living. Budgeting involves creating a plan to allocate your income towards various expenses and financial goals.</p>
-						   <button class="container btn  btn-primary">Let's Learn	</button>
-						</div>
-                     </li>
-                     <!-- Single Experience -->
-                     <li>
-                        <div class="timeline_content">
-                        <span>3</span>
-                           <h4>Financial Goal Setting</h4>
-                           <p>Setting financial goals provides direction and motivation for your financial decisions. Short-term goals are achievable within a year, such as building an emergency fund. Medium-term goals, like buying a car or saving for a down payment on a house, typically span one to five years. Long-term goals, such as retirement planning, extend beyond five years and require consistent saving and investing.</p>
-						   <button class="container btn  btn-primary">Let's Learn</button>
-						</div>
-                     </li>
-                     <!-- Single Experience -->
-                     <li>
-                        <div class="timeline_content">
-                        <span>4</span>
-                           <h4>Understanding Debt</h4>
-                           <p>Debt can be a useful tool but needs to be managed responsibly. Types of debt include credit cards, student loans, mortgages, and personal loans. Good debt helps you build assets or invest in your future, while bad debt accrues interest and hinders financial progress.</p>
-						   <button class="container btn  btn-primary">Let's Learn</button>
-                        </div>
-                     </li>
-
-					 <li>
-                        <div class="timeline_content">
-                        <span>5</span>
-                           <h4>Savings and Emergency Funds</h4>
-                           <p>Savings are the foundation of financial stability and security. An emergency fund is essential to cover unexpected expenses or income disruptions without resorting to debt. Saving strategies include setting aside a portion of your income regularly and automating contributions to savings accounts.</p>
-						   <button class="container btn  btn-primary">Let's Learn</button>
-                        </div>
-                     </li>
-
-					 <li>
-                        <div class="timeline_content">
-                        <span>6</span>
-                           <h4>Investing Basics</h4>
-                           <p>Investing is a key component of wealth building and achieving long-term financial goals. It involves purchasing assets such as stocks, bonds, mutual funds, or real estate with the expectation of generating returns over time. Understanding risk and diversification is crucial for building a well-balanced investment portfolio.</p>
-						   <button class="container btn  btn-primary">Let's Learn</button>
-                        </div>
-                     </li>
-
-					 <li>
-                        <div class="timeline_content">
-                        <span>7</span>
-                           <h4>Retirement Planning</h4>
-                           <p>Retirement planning involves preparing financially for your golden years. It's essential to start saving for retirement early and regularly contribute to retirement accounts such as 401(k)s or IRAs. Factors such as inflation, longevity, and lifestyle goals should be considered when determining retirement savings goals.</p>
-						   <button class="container btn  btn-primary">Let's Learn</button>
-                        </div>
-                     </li>	
-                  </ul>
-               </div>
-            </div>
-		</div>
-	  </section>
+		</section>
 
 		<br><br>
 
@@ -130,31 +296,19 @@
 		<footer>
 			<div class="footer-container">
 				<div class="left-col">
-					<img src="../images/icon/logo - Copy.png" style="width: 200px;">
+					
 					<div class="logo"></div>
 					<div class="social-media">
-						<a href="#"><img src="../images/icon\fb.png"></a>
-						<a href="#"><img src="../images/icon\insta.png"></a>
-						<a href="#"><img src="../images/icon\tt.png"></a>
-						<a href="#"><img src="../images/icon\ytube.png"></a>
-						<a href="#"><img src="../images/icon\linkedin.png"></a>
+						<a href="#"><img src="../../images/icon\fb.png"></a>
+						<a href="#"><img src="../../images/icon\insta.png"></a>
+						<a href="#"><img src="../../images/icon\tt.png"></a>
+						<a href="#"><img src="../../images/icon\ytube.png"></a>
+						<a href="#"><img src="../../images/icon\linkedin.png"></a>
 					</div><br><br>
-					<p class="rights-text">Copyright © 2021 Created By Roshan Kumar, Abhishek
-						Dulat All Rights Reserved.</p>
-					<br><p><img src="../images/icon/location.png"> Lovely Professional
-						University<br>Phagwara, Punjab-144401</p><br>
-					<p><img src="../images/icon/phone.png"> +91-1234-567-890<br><img
-							src="../images/icon/mail.png">&nbsp; learnedonline9419@gmail.com</p>
+					<br><p><img src="../../images/icon/location.png">Pandit Deendayal Energy University<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gandhinagar, Gujarat-382421</p><br>
+					<p><img src="../../images/icon/phone.png"> +91-1234-567-890<br><img src="../../images/icon/mail.png">&nbsp; pivot.pioneers@gmail.com</p>
 				</div>
-				<div class="right-col">
-					<h1 style="color: #fff">Our Newsletter</h1>
-					<div class="border"></div><br>
-					<p>Enter Your Email to get our News and updates.</p>
-					<form class="newsletter-form">
-						<input class="txtb" type="email" placeholder="Enter Your Email">
-						<input class="btn" type="submit" value="Submit">
-					</form>
-				</div>
+				
 			</div>
 		</footer>
 
