@@ -17,7 +17,7 @@ body {
 }
 
 header {
-	height: 90vh;
+	height: 60vh;
 	/* background: #000; */
 }
 .black {
@@ -113,11 +113,13 @@ a, button {
 	text-align: center;
 }
 .head-container {
-	margin-top: 245px;
+	background-color: #F8F8F8;
+	margin-top: 78px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-around;
+	height: 69vh;
 }
 .quote {
 	width: 600px;
@@ -292,7 +294,7 @@ a, button {
 
 /*Title*/
 .title {
-	 margin-top: 0px; 
+	 margin-top: 60px; 
 	font-family: 'Open Sans', sans-serif;
 	font-size: 30px;
 	text-align: center;
